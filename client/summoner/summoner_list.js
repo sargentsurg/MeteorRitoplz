@@ -9,9 +9,9 @@ Template.summonerList.helpers({
 });
 
 Template.summonerList.events({
-  'keypress input': function (evt, template) {
+  'keypress input': function(evt, template) {
     if (evt.which === 13) {
-      Meteor.call('getSummonerByName', template.find("input").value.trim(), 'na', function(error, result){});
+      Meteor.call('getSummonerByName', template.find("input").value.trim(), 'na', function(error, result) {});
       Session.set('currentSummoner', template.find("input").value.trim());
       return false;
     }
